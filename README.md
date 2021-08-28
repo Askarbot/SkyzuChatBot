@@ -10,7 +10,7 @@ Public Instance Of This Bot Can Be Found On Telegram As [@feritapibot](https://t
 
 ## Deploy
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/FeriEXP/FeriChatBot">
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Askarbot/SkyzuChatBot">
   <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-aqua?style=flat&logo=heroku" width="325" height="50.100" /></a></p>
 
 
