@@ -68,63 +68,24 @@ async def type_and_send(message):
     await message._client.send_chat_action(chat_id, "typing")
     response, _ = await gather(lunaQuery(query, user_id), sleep(2))
     if "Luna" in response:
-        responsee = response.replace("Luna", "Skyzu")
+        responsee = response.replace("Luna", "Ultra")
     else:
         responsee = response
     if "Aco" in responsee:
-        responsess = responsee.replace("Aco", "Skyzu")
+        responsess = responsee.replace("Aco", "ultra")
     else:
         responsess = responsee
-    if "Who is feri?" in responsess:
-        responsess2 = responsess.replace("Who is Skyzu?", "Nani?👀")
+    if "siapa ultra?" in responsess:
+        responsess2 = responsess.replace("siapa ultra?", "What?👀")
     else:
         responsess2 = responsess
     await message.reply_text(responsess2)
     await message._client.send_chat_action(chat_id, "cancel")
 
-
-@luna.on_message(filters.command(["start", "start@feritapibot"]) & ~filters.edited)
-async def start(client: Client, message: Message):
-    current_time = datetime.utcnow()
-    uptime_sec = (current_time - START_TIME).total_seconds()
-    uptime = await _human_time_duration(int(uptime_sec))
-    PM_IMG = "https://telegra.ph/file/c4f9ef20e3c1a211fa308.mp4"
-    kontol = await client.send_video(message.chat.id, PM_IMG)
-    await kontol.edit(
-        f"""I'm online!\n<b>Up since:</b> `{uptime}`""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "DEVELOPER", url="https://t.me/skyzuuuu"
-                    ),
-                    InlineKeyboardButton(
-                        "GROUP", url="https://t.me/fourBrothersgroup"
-                    )
-                ]
-            ]
-        )
-    )
-
-
-@luna.on_message(filters.command(["ping", "ping@feritapibot"]) & ~filters.edited)
-async def ping_pong(client: Client, m: Message):
-    start = time()
-    m_reply = await m.reply_text("Pinging...")
-    delta_ping = time() - start
-    current_time = datetime.utcnow()
-    uptime_sec = (current_time - START_TIME).total_seconds()
-    uptime = await _human_time_duration(int(uptime_sec))
-    await m_reply.edit_text(
-        f"🏓 **PONG!!**\n"
-        f"**Time Taken:** `{delta_ping * 1000:.3f} ms`\n"
-        f"**Uptime:** `{uptime}`")
-
-
 @luna.on_message(
     ~filters.private
     & filters.text
-    & ~filters.command(["start", "start@feritapibot"])
+    & ~filters.command(["start", "start@ultramen_music_bot"])
     & ~filters.edited,
     group=69,
 )
@@ -137,7 +98,7 @@ async def chat(_, message):
             return
     else:
         match = re.search(
-            "[.|\n]{0,}feri[.|\n]{0,}",
+            "[.|\n]{0,}ultra[.|\n]{0,}",
             message.text.strip(),
             flags=re.IGNORECASE,
         )
@@ -148,7 +109,7 @@ async def chat(_, message):
 
 @luna.on_message(
     filters.private
-    & ~filters.command(["start", "start@feritapibot"])
+    & ~filters.command(["start", "start@ultramen_music_bot"])
     & ~filters.edited
 )
 async def chatpm(_, message):
