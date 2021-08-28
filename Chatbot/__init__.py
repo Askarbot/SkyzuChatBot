@@ -68,15 +68,15 @@ async def type_and_send(message):
     await message._client.send_chat_action(chat_id, "typing")
     response, _ = await gather(lunaQuery(query, user_id), sleep(2))
     if "Luna" in response:
-        responsee = response.replace("Luna", "Feri")
+        responsee = response.replace("Luna", "Skyzu")
     else:
         responsee = response
     if "Aco" in responsee:
-        responsess = responsee.replace("Aco", "feri")
+        responsess = responsee.replace("Aco", "Skyzu")
     else:
         responsess = responsee
     if "Who is feri?" in responsess:
-        responsess2 = responsess.replace("Who is feri?", "Nani?👀")
+        responsess2 = responsess.replace("Who is Skyzu?", "Nani?👀")
     else:
         responsess2 = responsess
     await message.reply_text(responsess2)
@@ -96,10 +96,10 @@ async def start(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "DEVELOPER", url="https://t.me/xflicks"
+                        "DEVELOPER", url="https://t.me/skyzuuuu"
                     ),
                     InlineKeyboardButton(
-                        "GROUP", url="https://t.me/anossupport"
+                        "GROUP", url="https://t.me/fourBrothersgroup"
                     )
                 ]
             ]
