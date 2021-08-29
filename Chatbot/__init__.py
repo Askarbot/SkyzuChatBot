@@ -76,7 +76,7 @@ async def type_and_send(message):
     else:
         responsess = responsee
     if "siapa ultra?" in responsess:
-        responsess2 = responsess.replace("siapa kar?", "What?👀")
+        responsess2 = responsess.replace("siapa skyzu?", "What?👀")
     else:
         responsess2 = responsess
     await message.reply_text(responsess2)
@@ -98,7 +98,7 @@ async def chat(_, message):
             return
     else:
         match = re.search(
-            "[.|\n]{0,}skyzu[.|\n]{0,}",
+            "[.|\n]{0,}kar[.|\n]{0,}",
             message.text.strip(),
             flags=re.IGNORECASE,
         )
