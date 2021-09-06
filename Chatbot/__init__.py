@@ -68,11 +68,11 @@ async def type_and_send(message):
     await message._client.send_chat_action(chat_id, "typing")
     response, _ = await gather(lunaQuery(query, user_id), sleep(2))
     if "Luna" in response:
-        responsee = response.replace("Luna", "kar")
+        responsee = response.replace("Luna", "skyzu")
     else:
         responsee = response
     if "Aco" in responsee:
-        responsess = responsee.replace("Aco", "kar")
+        responsess = responsee.replace("Aco", "skyzu")
     else:
         responsess = responsee
     if "siapa ultra?" in responsess:
@@ -85,7 +85,7 @@ async def type_and_send(message):
 @luna.on_message(
     ~filters.private
     & filters.text
-    & ~filters.command(["start", "start@karmusicbot"])
+    & ~filters.command(["start", "start@skyzumusicbot"])
     & ~filters.edited,
     group=69,
 )
@@ -98,7 +98,7 @@ async def chat(_, message):
             return
     else:
         match = re.search(
-            "[.|\n]{0,}kar[.|\n]{0,}",
+            "[.|\n]{0,}skyzu[.|\n]{0,}",
             message.text.strip(),
             flags=re.IGNORECASE,
         )
@@ -109,7 +109,7 @@ async def chat(_, message):
 
 @luna.on_message(
     filters.private
-    & ~filters.command(["start", "start@karmusicbot"])
+    & ~filters.command(["start", "start@skyzumusicbot"])
     & ~filters.edited
 )
 async def chatpm(_, message):
